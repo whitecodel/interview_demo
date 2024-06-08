@@ -84,8 +84,35 @@ class _HomePageState extends State<HomePage> {
             if (!isLoading)
               Column(
                 children: [
-                  Text("Rooted: $isRooted"),
-                  Text("Connection Secure: $connectionSecure"),
+                  Container(
+                    width: 250,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: isRooted ? Colors.red : Colors.green,
+                    ),
+                    child: Text(
+                      'Rooted: $isRooted',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Container(
+                    width: 250,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: connectionSecure ? Colors.green : Colors.red,
+                    ),
+                    child: Text(
+                      'Connection Secure: $connectionSecure',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
           ],
